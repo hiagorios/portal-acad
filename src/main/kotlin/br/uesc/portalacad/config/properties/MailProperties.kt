@@ -3,22 +3,23 @@ package br.uesc.portalacad.config.properties
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 
-class MailProps {
-    @NotBlank
-    var host: String? = null
+class MailProperties {
 
     @NotBlank
-    var username: String? = null
-
-    @NotNull
-    var port: Int? = null
+    lateinit var host: String
 
     @NotBlank
-    var password: String? = null
+    lateinit var username: String
 
     @NotNull
-    var tls: Boolean? = null
+    var port: Int = 587
+
+    @NotBlank
+    lateinit var password: String
 
     @NotNull
-    var ssl: Boolean? = null
+    var tls: Boolean = false
+
+    @NotNull
+    var ssl: Boolean = false
 }
